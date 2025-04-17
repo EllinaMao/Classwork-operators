@@ -39,7 +39,7 @@ public:
 	bool operator !=(const Point& obj)const;
 
 
-
+//
 
 
 

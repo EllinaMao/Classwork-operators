@@ -56,6 +56,36 @@ bool Point::operator>(const Point& obj)////  ð1>p2
 	return false;
 }
 
+bool Point::operator>=(const Point& obj) const
+{
+	if (x >= obj.x && y >= obj.y) {
+		return true;
+	}
+	return false;
+}
+
+bool Point::operator<(const Point& obj) const
+{
+	if (x < obj.x && y < obj.y) {
+		return true;
+	}
+	return false;
+}
+
+bool Point::operator<=(const Point& obj) const
+{
+	if (x <= obj.x && y <= obj.y) {
+		return true;
+	}
+	return false;
+}
+
+bool Point::operator!=(const Point& obj) const
+{
+	return x != obj.x || y != obj.y;
+}
+
+
 Point Point::operator-(const Point& obj) const
 {
 	Point rez(this->x - obj.x, this->y - obj.y);

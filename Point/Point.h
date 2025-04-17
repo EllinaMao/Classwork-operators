@@ -32,6 +32,23 @@ public:
 
 	//////Всі інші Логічні оператори  на дз   <, !=, <=, >=  !!!!!!!!!!!!!!!!!!!
 
+	bool operator >=(const Point& obj)const;
+	bool operator <(const Point& obj)const;
+	bool operator <=(const Point& obj)const;
+
+	bool operator !=(const Point& obj)const;
+
+
+
+
+
+
+
+
+	/////////////////////////////////////////////////////////////////
+
+
+
 	Point operator -(const Point& obj)const;   ////////DZ!!!!!
 	Point operator /(const Point& obj)const;	////////DZ!!!!!
 	Point operator *(const Point& obj)const;	////////DZ!!!!!

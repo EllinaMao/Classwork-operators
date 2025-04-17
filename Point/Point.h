@@ -32,14 +32,14 @@ public:
 
 	//////Всі інші Логічні оператори  на дз   <, !=, <=, >=  !!!!!!!!!!!!!!!!!!!
 
-	//Point operator -(const Point& obj)const;   ////////DZ!!!!!
-	//Point operator /(const Point& obj)const;	////////DZ!!!!!
-	//Point operator *(const Point& obj)const;	////////DZ!!!!!
+	Point operator -(const Point& obj)const;   ////////DZ!!!!!
+	Point operator /(const Point& obj)const;	////////DZ!!!!!
+	Point operator *(const Point& obj)const;	////////DZ!!!!!
 
 
-	/*Point operator -=(int rs);     ////////DZ!!!!!
+	Point operator -=(int rs);     ////////DZ!!!!!
 	Point operator /=(int rs);       ////////DZ!!!!!
-	Point operator *=(int rs);*/     ////////DZ!!!!!
+	Point operator *=(int rs);     ////////DZ!!!!!
 
 
 
@@ -51,8 +51,8 @@ public:
 
 	////Перегрузка оператору перетворення(Конвертація) типу
 
-	 operator int();//// Point ----->int
-	 operator double();/////Point----->double   !!!!!! допишіть
+	 explicit operator int() const;//// Point ----->int
+	 explicit operator double() const;/////Point----->double   !!!!!! допишіть
 
 
 
@@ -69,8 +69,8 @@ public:
 
 	 /////  -- Decrement   префіксна форма/постфіксна форма  DZ!!!!!!!!!!!!!!!!!!!!!!!!
 
-
-
+	 Point& operator --();
+	 Point operator --(int i);// постфіксна форма
 };
 
 
@@ -83,7 +83,7 @@ public:
 
 Point operator+(const int number, const Point& obj);/////  int+Point можна зробити тільки глобальною функцією  **********
 
-/////Point operator+(const Point& obj, int number);////глобальна функція   Point+int!!!!!!!!!!!!!!!!!!!!!
+Point operator+(const Point& obj, int number);////глобальна функція   Point+int!!!!!!!!!!!!!!!!!!!!!
 
 
 

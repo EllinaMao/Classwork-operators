@@ -56,6 +56,54 @@ bool Point::operator>(const Point& obj)////  р1>p2
 	return false;
 }
 
+Point Point::operator-(const Point& obj) const
+{
+	Point rez(this->x - obj.x, this->y - obj.y);
+	return rez;
+}
+
+Point Point::operator/(const Point& obj) const
+{
+	if (obj.x == 0|| obj.y == 0) {
+		cout << "Division by zero is not allowed." << endl;
+		return *this;
+	}
+
+	Point rez(this->x / obj.x, this->y / obj.y);
+	return rez;
+}
+
+Point Point::operator*(const Point& obj) const
+{
+	Point rez(this->x * obj.x, this->y * obj.y);
+	return rez;
+}
+
+Point Point::operator-=(int rs)
+{
+	x -= rs;
+	y -= rs;
+	return *this;
+}
+
+Point Point::operator/=(int rs)
+{
+    if (rs == 0) {
+		cout << "Division by zero is not allowed." << endl;
+		return *this;
+    }
+    x /= rs;
+    y /= rs;
+    return *this;
+}
+
+Point Point::operator*=(int rs)
+{
+	x *= rs;
+	y *= rs;
+	return *this;
+}
+
 void Point::Show() const///// є методом класу Point::   , ::- оператор розширення видимості
 {
 	cout <<"X: "<< x << " Y: " << y << endl;
@@ -74,11 +122,14 @@ int Point::GetY() const
 ///int -------> Point  explisite constructor
 
 
-Point::operator int()//////  Point----->int
+Point::operator int() const//////  Point----->int
 {
+    return x + y; 
+}
 
-	return x + y;
-
+Point::operator double() const//////  Point----->double
+{
+    return sqrt(x * x + y * y);
 }
 
 Point& Point::operator++()////префіксна форма
@@ -94,6 +145,21 @@ Point Point::operator++(int i)////постфіксна форма
 	x++;
 	y++;
 	return temp;////   (obj++)++ копія , не можна !!!! 
+}
+
+Point& Point::operator--()
+{
+	x--;
+	y--;
+	return *this;
+}
+
+Point Point::operator--(int i)
+{
+	Point temp(*this);
+	x--;
+	y--;
+	return temp;
 }
 
 
